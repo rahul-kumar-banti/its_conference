@@ -1,0 +1,20 @@
+.popfirst{
+    display: none;
+    position:fixed;
+    height: 100%;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 5555;
+}
+.closepopup{
+    float: right;
+    margin-left:90%;
+    font-size: 2em;
+    color: red;
+    cursor: pointer;
+
+}
+.cimg{
+    height:200px;
+    width: 200px;
+}

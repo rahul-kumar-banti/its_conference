@@ -1,0 +1,95 @@
+.enduser
+{
+ padding: 10% 2%;
+}
+.enduser {
+    width: 100%;
+   height: auto;
+    background: url(../img/intro-bg.jpg) top center;
+    background-size: cover;
+    overflow: hidden;
+    position: relative;
+  }
+  
+.enduser:before {
+    content: "";
+    background: rgba(6, 12, 34, 0.692);
+    position: absolute;
+    bottom: 0;
+    top: 0;
+    left: 0;
+    right: 0;
+  }
+.user-img-opt
+{
+    width:70%;
+}
+.user-img-opt img
+{
+    width:50%;
+}
+
+.user-data
+{
+    padding-top:5%;
+
+}
+nav > .nav.nav-tabs{
+
+    border: none;
+      color:#fff;
+      background:#272e38;
+      border-radius:0;
+  
+  }
+  nav > div a.nav-item.nav-link,
+  nav > div a.nav-item.nav-link.active
+  {
+    border: none;
+      padding: 18px 5px;
+      color:#fff;
+      background:#272e38;
+      border-radius:0;
+  }
+  
+  nav > div a.nav-item.nav-link.active:after
+   {
+    content: "";
+    position: relative;
+    bottom: -60px;
+    left: -10%;
+    border: 15px solid transparent;
+    border-top-color: #e74c3c ;
+  }
+  .tab-content{
+    background: #fdfdfd;
+      line-height: 25px;
+      border: 1px solid #ddd;
+      border-top:5px solid #e74c3c;
+      border-bottom:5px solid #e74c3c;
+      
+  }
+  
+  nav > div a.nav-item.nav-link:hover,
+  nav > div a.nav-item.nav-link:focus
+  {
+    border: none;
+      background: #e74c3c;
+      color:#fff;
+      border-radius:0;
+      transition:background 0.20s linear;
+  }
+  .personal-info .row
+  {
+      padding: 1%;
+  }
+  .research-info .row
+  {
+padding:1%;
+
+  }
+  input:required::before{
+content: "*";
+color: red;
+
+  }

@@ -1,0 +1,53 @@
+
+
+.nav-menu-container{
+    background-color:black !important;
+    width: 100%;
+}
+.lg4{
+    height: 100px;
+    padding: 3px;
+}
+/* .itslogo{ */
+   
+    /* border-radius: 10%; */
+    /* box-shadow: 3px 3px 5px black; */
+/* } */
+.aboutus-section-1,.aboutus-section-2{
+    min-height: 300px;
+    width:100%;
+    margin-left: 20px;
+    margin: 20px;
+    margin-right: 20px;
+
+    border: 1px solid gray;
+}
+
+.btn-lg-sn
+{
+    width: 100px;
+    color:white;
+    background: transparent;
+    margin-right: 4px;
+}
+
+.box-shadow-menu {
+    position: relative;
+    padding-left: 1.25em;
+  }
+  .box-shadow-menu:before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0.25em;
+    width: 1em;
+    height: 0.15em;
+    background: black;
+    box-shadow: 
+      0 0.25em 0 0 black,
+      0 0.5em 0 0 black;
+  }
+  /* menubar */
+ nav a{
+	 color:white;
+ }

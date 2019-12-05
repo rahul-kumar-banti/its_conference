@@ -1,0 +1,172 @@
+/* media queries */
+
+/* @media only screen   
+and (min-width: 1370px)  
+and (max-width: 1605px) 
+{
+  #into
+  {
+    height:auto;
+  }
+  
+}
+@media only screen   
+and (min-width: 1030px)   
+and (max-width: 1366px)  
+{
+  #into
+  {
+    height: auto;
+  }
+} */
+/* For 480 Resolution   */
+@media only screen   
+and (min-device-width : 320px)   
+and (max-device-width : 480px)  
+{ 
+    #into
+    {
+        height: 180vh;
+
+    }
+    .imp-dates-table
+{
+    width: 100%;
+    padding: 0;
+}
+.table-content
+{
+  font-size: 13px;
+}
+.table-content-data
+{
+  font-size: 13px;
+}
+.aboutits1,.c-justify-in-mobile
+{
+  text-align: justify;
+  justify-content: space-evenly;
+  padding:2%;
+}
+.videoits
+{
+  width:290px;
+}
+#guidelines
+{
+  padding-left: 0 ;
+  padding-right: 0;
+}
+.guidelines-table
+{
+  margin-left: 0;
+}
+.payment1
+{
+  margin: 0;
+}
+.submission_guideline
+{
+  text-align: justify;
+}
+.our-team
+{
+  margin: 10%;
+}
+.content-center
+{
+  text-align: center;
+}
+}  
+
+
+/* For 640 Resolution */  
+@media only screen   
+and (min-device-width : 361px)   
+and (max-device-width : 640px)  
+{ 
+#into
+{
+  height: 170vh;
+}  
+.imp-dates-table
+{
+    width: 100%;
+    padding: 0;
+}
+.content-center
+{
+  text-align: center;
+}
+.videoits
+{
+  width:450px;
+}
+.guidelines-table
+{
+  margin-left: 0;
+}
+
+#guidelines
+{
+  padding-left: 0 ;
+  padding-right: 0;
+}
+} 
+
+/* For 1024 Resolution */  
+@media only screen   
+and (min-device-width : 768px)   
+and (max-device-width : 1024px)  
+{ 
+  .our-team
+  {
+    width: auto;
+  }
+  #into
+{
+  height: 90vh;
+} 
+.committee-heading 
+{
+  font-size: 20px;
+}
+.nav-menu > li {
+  margin-left: 0;
+}
+.videoits
+{
+  width:250px;
+} 
+.container
+{
+  max-width: 100%;
+}
+.imp-dates-table
+{
+    width: 100%;
+   
+}
+
+}  
+@media only screen   
+and (min-width: 1370px)  
+and (max-width: 1605px)  
+{ 
+  #into
+{
+  height: 140vh;
+}  
+}  
+
+/* For 1366 Resolution */  
+@media only screen   
+and (min-width: 1030px)   
+and (max-width: 1366px)  
+{ 
+  #into
+  {
+    height: 195vh;
+  }
+}  
+
