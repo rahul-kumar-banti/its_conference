@@ -5,7 +5,7 @@ if (isset($_SESSION["id"])) {
     $login = true;
     $id = $_SESSION['id'];
     
-    $sql = "create or replace VIEW transview as SELECT p.*,pp.transition_id,pp.status from paper_details p  left JOIN payment pp on p.paper_id=pp.paper_id where p.member_id='$id'";
+    $sql = "create or replace VIEW transview as SELECT p.*,pp.transition_id,pp.status ,pp.remark from paper_details p  left JOIN payment pp on p.paper_id=pp.paper_id where p.member_id='$id'";
     $sqll="SELECT    t.* from transview t where version=(SELECT max(version)  as version from transview as k where k.paper_id=t.paper_id GROUP by paper_id  );";
     $db1->query($sql);
     $result = $db1->query($sqll);
@@ -21,6 +21,8 @@ if (isset($_SESSION["id"])) {
                     <th scope="col">version</th>
                     <th scope="col">document</th>
                     <th scope="col">Payment Status</th>
+                    <th scope="col">Remark</th>
+                    
                 </tr>
             </thead>
             <tbody>
@@ -58,6 +60,9 @@ else{
 ?>
 
 
+                        </td>
+                        <td>
+                        <?php echo $r['remark'] ?>
                         </td>
                     </tr>
 

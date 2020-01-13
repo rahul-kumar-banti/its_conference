@@ -178,7 +178,7 @@ if (isset($_SESSION["id"])) {
               <a class="nav-item nav-link active" id="nav-profile-tab" data-toggle="tab" href="#nav-profile-view" role="tab" aria-controls="nav-home" aria-selected="true">Personal Information</a>
               <a class="nav-item nav-link" id="nav-docupload-tab" data-toggle="tab" href="#docupload" role="tab" aria-controls="nav-profile" aria-selected="false"> Research Paper</a>
               <a class="nav-item nav-link" id="nav-docupdate-tab" data-toggle="tab" href="#docupdate" role="tab" aria-controls="nav-about" aria-selected="false">Submit Next Version</a>
-              <a class="nav-item nav-link" id="nav-docview-tab" data-toggle="tab" href="#docview" role="tab" aria-controls="nav-contact" aria-selected="false">Uploaded Paper</a>
+              <a class="nav-item nav-link" id="nav-docview-tab" data-toggle="tab" href="#docview" role="tab" aria-controls="nav-contact" aria-selected="false">View Papers</a>
 
             </div>
           </nav>
