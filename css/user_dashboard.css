@@ -2,6 +2,11 @@
 {
  padding: 10% 2%;
 }
+.userinfo{
+  max-width: 200px;
+  
+
+}
 .enduser {
     width: 100%;
    height: auto;
@@ -93,3 +98,20 @@ content: "*";
 color: red;
 
   }
+
+  .userProfileRow{
+    background-color: #ddd;
+    height: auto;
+    padding: 0px;
+    /* margin-left:2%;
+    margin-right:2%; */
+  }
+  .userProfileImg{
+    max-height: 80px;
+    width: 80px;
+    /* margin-top:5%; */
+    margin-left:32%;
+  }
+.userprofileChanger{
+  padding:1%;
+}

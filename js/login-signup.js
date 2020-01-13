@@ -31,6 +31,31 @@ $("#fullname").focusout(function()
     
 }
 );
+$("#reg-email").blur(function(){
+    value=$("#reg-email").val();
+    formdata=new FormData();
+    formdata.append("uid",value);
+    fetch("./userinfocheck.php",{
+        method:"post",
+        body:formdata     
+    }).then(function(data){ return data.text() }).then(function(data){
+        // console.log(data)
+        // $(".emailerror").text(data).show();
+        
+     if(data=="false"){
+        $("#reg-email").removeClass('errorbox');
+        $(".emailerror").hide();
+       
+     } 
+     else{
+        $("#reg-email").addClass('errorbox');
+        $(".emailerror").show();
+        $(".emailerror").text("already registered try another");
+       
+     }
+    })
+
+})
 
 $("#catagory1").focusout(function()
 {    
@@ -89,11 +114,13 @@ $("#countryname").focusout(function()
 
 
 $("#password123").blur(function()
-{     var regexname=new RegExp("^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#\$%\^&\*])(?=.{8,})");
+{     //var regexname=new RegExp("^[a-zA-Z0-9_.-]*$");
     // value= $(this).val();
-    if(!$(this).val().match(regexname)){
+    if(!$(this).val().match(/^[A-Za-z]\w{7,14}$/)){
         $(this).addClass('errorbox');
         $(this).next().show();
+        $(this).next().text("password doesn't follow pattern");
+
 
     }
     else

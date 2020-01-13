@@ -5,13 +5,13 @@ if (isset($_SESSION["id"])) {
     $login = true;
     $id = $_SESSION['id'];
     
-    $sql = "create or replace VIEW transview as SELECT p.*,pp.transition_id from paper_details p  left JOIN payment pp on p.paper_id=pp.paper_id where p.member_id='$id'";
-    $sqll="SELECT  paper_id,paper_title,paper_catagory,date,document,transition_id,max(version) as  version  from transview GROUP by paper_id order by date desc;";
+    $sql = "create or replace VIEW transview as SELECT p.*,pp.transition_id,pp.status from paper_details p  left JOIN payment pp on p.paper_id=pp.paper_id where p.member_id='$id'";
+    $sqll="SELECT  paper_id,paper_title,paper_catagory,date,status,document,transition_id,max(version) as  version  from transview GROUP by paper_id order by date desc;";
     $db1->query($sql);
     $result = $db1->query($sqll);
     if ($result->num_rows > 0) {
         ?>
-        <table class="table">
+        <table class="table" id="section-to-print">
             <thead>
                 <tr>
                     <th scope="col">PaperId</th>
@@ -38,10 +38,22 @@ if (isset($_SESSION["id"])) {
                         <td>
 <?php
 if($r['transition_id']!=NULL){
-    echo "Submitted";
+    if($r['status']==0)
+    echo "<span class='btn-info'>Submitted</span>";
+
+     elseif($r['status']==1)
+     echo "<span class='btn-success'>verified</span>"; 
+
+     else
+     echo "<span class=' btn-danger'>rejected</span>";
+     
+
+
 }
+
 else{
-    echo '<button class="btn btn-primary btn-sm paymentbtn" data-toggle="modal" data-target="#paymentmodal" id="'.$r["paper_id"].'">pay now</button>';
+    $fun='onclick="paymentsubmitform(\''.$r["paper_id"].'\')"';
+    echo '<button class="btn btn-primary btn-sm paymentbtn" data-toggle="modal" '.$fun.' data-target="#paymentmodal" id="'.$r["paper_id"].' ">pay now</button>';
 }
 ?>
 

@@ -60,6 +60,7 @@ if (isset($_SESSION["id"])) {
                     <div class="form-group">
                             
                             <div class="paperidforpay"></div>
+                            <div class="text-dark bg-light pidshow"></div>
                             <div class="valid-feedback">Valid.</div>
                             <div class="invalid-feedback">Please fill out this field.</div>
                           </div>
@@ -126,7 +127,7 @@ if (isset($_SESSION["id"])) {
     </div>
         </div>
         <div class="modal-footer">
-          <div id="errormsgforpayment"></div>
+          <div id="errormsgforpayment" class="pull-left"></div>
           <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
         </div>
       </div>
@@ -169,18 +170,9 @@ if (isset($_SESSION["id"])) {
   <section class="enduser">
     <div class="container-fluid">
       <div class="row">
-        <div class="col-md-4">
-          <div class="card border-primary  user-img-opt" style="padding:5px">
-            <img class="card-img-top img-fluid mx-auto rounded-circle" src="<?php echo $_SESSION['photo']; ?>" alt="Card image cap">
-            <div class="card-body">
-              <h4 class="mx-auto text-center text-capitalize"><?php echo $row['full_name']; ?> </h4>
-              <h5 class="mx-auto text-center text-capitalize ">Member id: <?php echo $row['member_id']; ?> </h5>
-              <h5 class="mx-auto text-center  "> <button type="button" class="btn btn-primary text-center mx-auto" data-toggle="modal" data-target="#changeimg">Change Image </button>
-              </h5>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-8 user-data">
+        
+        <div class="col-md-12 user-data">
+          <?php include_once("./includes/profileviewer.php"); ?>
           <nav>
             <div class="nav nav-tabs nav-fill" id="nav-tab" role="tablist">
               <a class="nav-item nav-link active" id="nav-profile-tab" data-toggle="tab" href="#nav-profile-view" role="tab" aria-controls="nav-home" aria-selected="true">Personal Information</a>
@@ -194,7 +186,7 @@ if (isset($_SESSION["id"])) {
             <div class="tab-pane fade show active  " id="nav-profile-view" role="tabpanel" aria-labelledby="nav-profile-tab">
               <div class="row">
                 <div class="col-md-12">
-                  <div class="profileinfo">
+                  <div class="profileinfo"  style="padding-left:10%;padding-top:2%;">
                     <h6 class="mx-auto  font-weight-bold"> <i class="fa fa-user" aria-hidden="true"></i><span class="text-primary">Full Name:</span><span class="text-capitalize text-secondary"> <?php echo $row["full_name"] ?></span></h6>
                     <h6 class="mx-auto  font-weight-bold"> <i class="fa fa-envelope" aria-hidden="true"></i><span class="text-primary">Email:</span><span class="text-capitalize text-secondary"> <?php echo $row["email"] ?></span></h6>
                     <h6 class="mx-auto  font-weight-bold"> <i class="fa fa-phone" aria-hidden="true"></i><span class="text-primary">Mobile no:</span><span class="text-capitalize text-secondary"> <?php echo $row["moble_no"] ?></span></h6>
@@ -203,9 +195,10 @@ if (isset($_SESSION["id"])) {
                     <h6 class="mx-auto  font-weight-bold"> <i class="fa fa-globe" aria-hidden="true"></i><span class="text-primary">Country:</span><span class="text-capitalize text-secondary"> <?php echo $row["country"] ?></span></h6>
                     <h6 class="mx-auto  font-weight-bold"> <i class="fas fa-city" aria-hidden="true"></i><span class="text-primary">State:</span><span class="text-capitalize text-secondary"> <?php echo $row["state"] ?></span></h6>
                     <h6 class="mx-auto  font-weight-bold"> <i class="fa fa-home" aria-hidden="true"></i><span class="text-primary">Address:</span><span class="text-capitalize text-secondary"> <?php echo $row["address"] ?></span></h6>
+                    <button class="btn btn-primary editprofilebtn">Edit profile</button>
+                    <!-- <button onclick="javascript:print()">print</button> -->
                   </div>
 
-                  <button class="btn btn-primary editprofilebtn">Edit profile</button>
 
                 </div>
 
@@ -357,13 +350,14 @@ if (isset($_SESSION["id"])) {
                     <div class="row mx-auto">
                       <div class="col-sm-6 col-md-6 col-xs-12">
                         <label for="firstName"> Author ID </label>
-                        <input type="text" name="autherid" data-valied="false" class="form-control author" id="author" placeholder="author id" required>
+                        <input type="text" name="autherid" data-valied="true" class="form-control author" id="author" value="<?php echo $id; ?>" placeholder="author id" required>
                         <div class="text-success text-center text-danger   authorname "></div>
                       </div>
                       <div class="col-sm-6 col-md-6 col-xs-12">
                         <label for="subauthor"> Sub-Author Id</label>
                         <div class="form-group input-group">
-                          <input type="text" class="form-control sub-author" data-valied="false" id="subauthor" placeholder="sub author id" required>
+                          <button class="btn btn-info add-input-subauthor " type="button">Add sub-Author</button>
+                          <!-- <input type="text" class="form-control sub-author" data-valied="true" id="subauthor" placeholder="sub author id"> -->
                           <div class="input-group-append add-input-subauthor " style="cursor:pointer">
                             <span class="input-group-text"> <i class="fa fa-plus-circle text-success" aria-hidden="true"></i> </span>
                           </div>
@@ -439,7 +433,7 @@ if (isset($_SESSION["id"])) {
             </div>
             </div>
             <div class="tab-pane fade" id="docview" role="tabpanel" aria-labelledby="nav-docview-tab">
-              <div class="table-responsive small paperlistview">
+              <div class="table-responsive small paperlistview" id="section-to-print">
                 <table class="table">
                   <thead>
                     <tr>
@@ -465,7 +459,9 @@ if (isset($_SESSION["id"])) {
 
                   </thead>
                 </table>
+                  
               </div>
+              <!-- <button class="btn btn-primary" onclick="javascript:print()">Print</button> -->
             </div>
           </div>
         

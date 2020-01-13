@@ -10,7 +10,7 @@ function ff(e) {
     success: function (data) {
       // console.log(typeof data)
       mstring = "user not found";
-      if (data.trim() == mstring.trim()) {
+      if (data.trim() == mstring.trim()&&data.trim()!="") {
         e.style = "border:2px solid red";
         e.setAttribute("data-valied", "false");
       } else {
@@ -23,6 +23,12 @@ function ff(e) {
       console.log(errorThrown);
     }
   });
+}
+///
+function paymentsubmitform(id){
+  $("#payment-details").show();
+  $(".paperidforpayment").val(id)
+$(".successmsgforpayment").hide();
 }
 // upload document
 function documentupload(e) {
@@ -60,7 +66,7 @@ $(document).ready(function () {
       },
       success: function (data) {
         mstring = "user not found";
-        if (data.trim() == mstring.trim()) {
+        if (data.trim() == mstring.trim()&&data!="") {
           $(".sub-author").css("border", "2px solid red");
           $(".sub-author").attr("data-valied", "false");
         } else {
@@ -337,10 +343,12 @@ $.ajax({
       contact us <a href="tel:991055457">991055457</a>
       </h4>`)
       $(".successmsgforpayment").show();
+      $("#errormsgforpayment").html("").hide();
     }
     else{
+      console.log(data)
       $("#errormsgforpayment").html(` <h6 class=" small font-weight-bold" style="color:red"><i class="fa fa-exclamation-triangle fa-1x text-danger"></i>
-      payment recoreded unsuccessfull<br><a href="mailto:ngctnd2020@its.edu.in">ngctnd2020@its.edu.in</a> <br>or
+      payment recoreded unsuccessfull may be due to DD/NEFT-No already found.please contact<br><a href="mailto:ngctnd2020@its.edu.in">ngctnd2020@its.edu.in</a> <br>or
       contact us <a href="tel:991055457">991055457</a> </h6>`)
     }
     viewpaperlist()
@@ -357,7 +365,9 @@ error in upload </h6>`);
   /////////////payment submit end/////////
   $(".paymentbtn").click(function(){
     $("#payment-details").show();
-      
+      alert("hello")
     $(".successmsgforpayment").hide();
   });
+
+
 });
