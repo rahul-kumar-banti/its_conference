@@ -232,7 +232,10 @@ $(document).ready(function () {
     var pid="";
     var file_extensionup;
     var filesizeup;
-    paperidup = $(".peperidupdate").val();
+    paperidup = $("[name='updateform']").find(".peperidupdate");
+    console.log(paperidup)
+    paperidup=paperidup.val();
+    console.log(paperidup)
     
     fileup = $(".upstedfile")[0].files[0];
     if (fileup != undefined) {

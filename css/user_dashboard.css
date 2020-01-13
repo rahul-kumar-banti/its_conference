@@ -51,7 +51,7 @@ nav > .nav.nav-tabs{
   nav > div a.nav-item.nav-link.active
   {
     border: none;
-      padding: 18px 5px;
+      padding: 5px 5px;
       color:#fff;
       background:#272e38;
       border-radius:0;
@@ -61,14 +61,14 @@ nav > .nav.nav-tabs{
    {
     content: "";
     position: relative;
-    bottom: -60px;
+    bottom: -45px;
     left: -10%;
     border: 15px solid transparent;
     border-top-color: #e74c3c ;
   }
   .tab-content{
     background: #fdfdfd;
-      line-height: 25px;
+      line-height:20px;
       border: 1px solid #ddd;
       border-top:5px solid #e74c3c;
       border-bottom:5px solid #e74c3c;
@@ -102,12 +102,13 @@ color: red;
   .userProfileRow{
     background-color: #ddd;
     height: auto;
+    max-width:500px !important;
     padding: 0px;
     /* margin-left:2%;
     margin-right:2%; */
   }
   .userProfileImg{
-    max-height: 80px;
+    max-height: 80px !important;
     width: 80px;
     /* margin-top:5%; */
     margin-left:32%;

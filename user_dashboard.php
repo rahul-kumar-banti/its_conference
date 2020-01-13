@@ -399,10 +399,10 @@ if (isset($_SESSION["id"])) {
             </div>
             <div class="tab-pane fade" id="docupdate" role="tabpanel" aria-labelledby="nav-docupdate-tab">
              
-            <form action="" onsubmit="return false;" name="updateform">
+            <form action="" onsubmit="return false;"  name="updateform">
                 <div class="row" style="margin:1%">
 
-                  <div class="col-md-4 paperidselectmenu">
+                  <div class="col-md-4 paperidselectmenu updatedpaperforsubmit">
                     
                   </div>
                   <div class="col-md-4">

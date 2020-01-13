@@ -174,6 +174,7 @@ if (isset($_SESSION["id"])) {
             <div class="row">
              
                 <div class="col-md-12 user-data">
+                <?php include_once("./includes/profileviewer.php"); ?>
                     <nav>
                         <div class="nav nav-tabs nav-fill" id="nav-tab" role="tablist">
                             <a class="nav-item nav-link active" id="nav-home-tab" data-toggle="tab" href="#usermanage"
@@ -526,33 +527,7 @@ if (isset($_SESSION["id"])) {
                         <div class="tab-pane fade" id="researchpaper" role="tabpanel" aria-labelledby="nav-about-tab">
 
 
-                            <table class="table" style="font-size:small">
-                                <thead>
-                                    <tr>
-                                        <th scope="col">#</th>
-                                        <th scope="col">Name</th>
-                                        <th scope="col">User Id</th>
-                                        <th scope="col">Paper Catagory</th>
-                                        <th scope="col">Paper Title</th>
-                                        <th scope="col">Author</th>
-                                        <th scope="col">Sub Author</th>
-                                        <th scope="col">No. Of Version</th>
-                                        <th scope="col">Organization</th>
-                                        <th scope="col">Document Name</th>
-                                        <th scope="col">Action</th>
-
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <tr>
-                                        <th scope="row">1</th>
-                                        <td>Mark</td>
-                                        <td>Otto</td>
-                                        <td>@mdo</td>
-                                    </tr>
-
-                                </tbody>
-                            </table>
+                       
 
 
                         </div>
@@ -725,4 +700,5 @@ if (isset($_SESSION["id"])) {
   <?php
   include_once("./includes/footer.php");
   ?>
+  <script defer src="./js/researchpaper.js"></script>
   <script src="./js/user_dashboard.js"></script>

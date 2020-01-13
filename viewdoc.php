@@ -6,12 +6,12 @@ if (isset($_SESSION["id"])) {
     $id = $_SESSION['id'];
     
     $sql = "create or replace VIEW transview as SELECT p.*,pp.transition_id,pp.status from paper_details p  left JOIN payment pp on p.paper_id=pp.paper_id where p.member_id='$id'";
-    $sqll="SELECT  paper_id,paper_title,paper_catagory,date,status,document,transition_id,max(version) as  version  from transview GROUP by paper_id order by date desc;";
+    $sqll="SELECT    t.* from transview t where version=(SELECT max(version)  as version from transview as k where k.paper_id=t.paper_id GROUP by paper_id  );";
     $db1->query($sql);
     $result = $db1->query($sqll);
     if ($result->num_rows > 0) {
         ?>
-        <table class="table" id="section-to-print">
+        <table class="table table-responsive" id="section-to-print">
             <thead>
                 <tr>
                     <th scope="col">PaperId</th>
