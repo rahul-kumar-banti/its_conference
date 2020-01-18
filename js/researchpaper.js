@@ -17,6 +17,7 @@ async function subprofileviewer(e){
     }).catch((err)=>{
 console.log("error",err);
     })
+    $(".title-model").html("<h4>Profile</h4>")
     $("#userinfomodal").modal('show');
 }
 async function paperviewer(e){
@@ -36,6 +37,7 @@ async function paperviewer(e){
     }).catch((err)=>{
 console.log("error",err);
     })
+    $(".title-model").html("<h4>Previous Version</h4>")
     $("#userinfomodal").modal('show');
 }
 $(document).ready(function(){

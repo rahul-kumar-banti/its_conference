@@ -13,8 +13,8 @@ if (isset($_SESSION["id"])) {
   $remark="";
   $status=0;
 
-  $sql="INSERT INTO payment (payment_id, paper_id, member_id, transition_id, mode_of_paymant, payment_date, amount,status,remark) 
-  VALUES (NULL, '$p_id', '$id', '$payment_no', '$p_mode', '$transition_date', '$amount','$status','$remark')";
+  $sql="INSERT INTO payment (payment_id, paper_id, member_id, transition_id, mode_of_paymant,'bank', payment_date, amount,status,remark) 
+  VALUES (NULL, '$p_id', '$id', '$payment_no', '$p_mode','$bankname', '$transition_date', '$amount','$status','$remark')";
   if($db1->query($sql)){
       echo "success";
   }
